@@ -16,8 +16,8 @@ const fetchMovieData = async () => {
 }
 
 // 영화 데이터 포멧
-const formattedMovieData = (movieLists) => {
-  return movieLists.map(movie => {
+const formattedMovieData = (movieData) => {
+  return movieData.map(movie => {
     const formatData = {
       id: movie.id,
       enTitle: movie.original_title.toLowerCase(),

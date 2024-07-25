@@ -13,7 +13,6 @@ const options = {
   }
 };
 
-
 const getTopLated = async () => {
   try{
     const response = await fetch(url, options);
