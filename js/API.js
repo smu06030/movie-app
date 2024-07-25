@@ -1,9 +1,9 @@
 import config from './config.js';
 
 const { API_KEY } = config;
-const BASE_URL = 'https://api.themoviedb.org/3';
-const BASE_LANG = 'ko-KR';
-const url = `${BASE_URL}/movie/top_rated?language=${BASE_LANG}&page=${1}`;
+const baseUrl = 'https://api.themoviedb.org/3';
+const baseLanguage = 'ko-KR';
+const url = `${baseUrl}/movie/top_rated?language=${baseLanguage}&page=${1}`;
 
 const options = {
   method: 'GET',
