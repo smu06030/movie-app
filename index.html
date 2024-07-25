@@ -10,7 +10,7 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
   <link rel="stylesheet" href="./css/common.css">
-  <script src="./js/common.js" defer></script>
+  <script src="./js/common.js" type="module" defer></script>
 </head>
 <body>
   <!-- container -->
@@ -22,80 +22,20 @@
         <a href="index.html">MOVIE</a>
       </div>
       <!-- 검색창 -->
-      <div class="searchForm">
-        <input type="text" id="search" placeholder="영화 제목 검색 (영문)">
-        <button><img src="./images/search.svg" alt="search"></button>
-      </div>
-      <!-- 깃허브 -->
+      <form class="searchForm" id="searchForm">
+        <input type="text" id="search" placeholder="영화 제목 검색 (한글, 영문)" autofocus>
+        <button type="submit" id="searchBtn"><img src="./images/search.svg" alt="search"></button>
+      </form>
+      <!-- 깃허브 링크 -->
       <div class="githubLink">
         <a target="_blank" href="https://github.com/smu06030/movie-app"><img src="./images/github.svg" alt="github"></a>
       </div>
     </header>
+    
     <!-- 영화 리스트 -->
     <main class="main">
       <div class="mainTitle">Movies</div>
-      <ul class="movieLists">
-        <li class="movie">
-          <span class="moviePoster"><img src="https://image.tmdb.org/t/p/w500/8BRSeREiz3UtDACuOjW8KyCyFuR.jpg" alt="슈퍼배드4"></span>
-          <div class="movieTitle">슈퍼배드 4</div>
-          <div class="movieOverview">Things just got a little more despicable.just got a little more despicable. just got a little more despicable.</div>
-          <div class="movieInfo">
-            <h4 class="movieYear">2024</h4>
-            <div class="movieRating">
-              <img src="./images/star.png" alt="별">
-              <p>
-                <span class="movieGrade">7.40</span>
-                <span class="movieTotal"> / 10</span>
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="movie">
-          <span class="moviePoster"><img src="https://image.tmdb.org/t/p/w500/wIrhEUBWjRmZuL1Ix41cF2LhJrW.jpg" alt="슈퍼배드4"></span>
-          <div class="movieTitle">슈퍼배드 4</div>
-          <div class="movieOverview">Things just got a little more despicable.just got a little more despicable. just got a little more despicable.</div>
-          <div class="movieInfo">
-            <h4 class="movieYear">2024</h4>
-            <div class="movieRating">
-              <img src="./images/star.png" alt="별">
-              <p>
-                <span class="movieGrade">7.40</span>
-                <span class="movieTotal"> / 10</span>
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="movie">
-          <span class="moviePoster"><img src="https://image.tmdb.org/t/p/w500/8BRSeREiz3UtDACuOjW8KyCyFuR.jpg" alt="슈퍼배드4"></span>
-          <div class="movieTitle">슈퍼배드 4</div>
-          <div class="movieOverview">Things just got a little more despicable.just got a little more despicable. just got a little more despicable.</div>
-          <div class="movieInfo">
-            <h4 class="movieYear">2024</h4>
-            <div class="movieRating">
-              <img src="./images/star.png" alt="별">
-              <p>
-                <span class="movieGrade">7.40</span>
-                <span class="movieTotal"> / 10</span>
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="movie">
-          <span class="moviePoster"><img src="https://image.tmdb.org/t/p/w500/8BRSeREiz3UtDACuOjW8KyCyFuR.jpg" alt="슈퍼배드4"></span>
-          <div class="movieTitle">슈퍼배드 4</div>
-          <div class="movieOverview">Things just got a little more despicable.just got a little more despicable. just got a little more despicable.</div>
-          <div class="movieInfo">
-            <h4 class="movieYear">2024</h4>
-            <div class="movieRating">
-              <img src="./images/star.png" alt="별">
-              <p>
-                <span class="movieGrade">7.40</span>
-                <span class="movieTotal"> / 10</span>
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <ul class="movieCards"></ul>
     </main>
 
     <!-- footer -->
