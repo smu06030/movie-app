@@ -1,12 +1,20 @@
+import config from './config.js';
+
+const { API_KEY } = config;
+const BASE_URL = 'https://api.themoviedb.org/3';
+const BASE_LANG = 'ko-KR';
+const url = `${BASE_URL}/movie/top_rated?language=${BASE_LANG}&page=${1}`;
+
 const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOGMzYjI5YWY1NzNhZmY0OTE0MzQ5YTc3MzE0MGUyNyIsIm5iZiI6MTcyMTg2OTMyOS40NDQ5OTIsInN1YiI6IjY2YTFhMmI4ODkwNGM4ZDk1OTcwNzczNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Hoo4TBntYqKx6GvBF6FJMI76VoUpkZ80qseKg39Y1G0'
+    Authorization: `Bearer ${ API_KEY }`
   }
 };
 
-const getTopLated = async (url) => {
+
+const getTopLated = async () => {
   try{
     const response = await fetch(url, options);
     const json = await response.json();

@@ -4,9 +4,8 @@ const movieLists = [];
 
 // 영화 데이터 가져오기
 const fetchMovieData = async () => {
-  const url = `https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=${1}`;
   try{
-    const { results: movieData } = await getTopLated(url);
+    const { results: movieData } = await getTopLated();
     
     movieLists.push(...formattedMovieData(movieData))
     
@@ -41,7 +40,7 @@ const createMovieCards = async (filteredMovies = null) => {
   ul.innerHTML = '';
   
   movieLists.map(movie => {
-    const { id, koTitle, imgUrl, overview, rating, date }= movie
+    const { id, koTitle, enTitle, imgUrl, overview, rating, date }= movie
     
     const li = document.createElement('li');
     li.setAttribute('class', 'movie');
@@ -50,7 +49,8 @@ const createMovieCards = async (filteredMovies = null) => {
         <span class="moviePoster">
           <img src="https://image.tmdb.org/t/p/w500${imgUrl}" alt="${koTitle}">
         </span>
-        <div class="movieTitle">${koTitle}</div>
+        <div class="movieKoTitle">${koTitle}</div>
+        <div class="movieEnTitle">(${enTitle})</div>
         <div class="movieOverview">${overview}</div>
         <div class="movieInfo">
           <h4 class="movieYear">${date}</h4>
