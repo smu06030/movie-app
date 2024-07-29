@@ -1,6 +1,5 @@
-import config from './config.js';
+import { API_KEY } from './config.js';
 
-const { API_KEY } = config;
 const baseUrl = 'https://api.themoviedb.org/3';
 const baseLanguage = 'ko-KR';
 const url = `${baseUrl}/movie/top_rated?language=${baseLanguage}&page=${1}`;
